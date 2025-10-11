@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoodie Thailand </title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Gambar banner mobile */
+    .mobile-only-banner {
+      display: none;
+      width: 100%;
+    }
+
+    .mobile-only-banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Desktop content */
+    .desktop-content {
+      display: block;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #00ff99;
+      margin: 10px 0;
+    }
+
+    .stock {
+      background-color: #0f0;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .quantity {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .quantity button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .quantity input {
+      width: 40px;
+      text-align: center;
+      background: transparent;
+      color: white;
+      border: 1px solid #888;
+      margin: 0 5px;
+    }
+
+    .btn-order {
+      background-color: #25D366;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+      .mobile-only-banner {
+        display: block;
+      }
+      .desktop-content {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gambar untuk mobile -->
+  <a href="https://shopee.co.id/OFFLINE-APPAREL-Hoodie-Oversize-Imprisoned-i.79305108.20596329174?sp_atk=40366b23-90de-476f-95ea-9bc99c65a964&xptdk=40366b23-90de-476f-95ea-9bc99c65a964" 
+     class="mobile-only-banner" target="_blank">
+    <img src="https://pub-5b37d10a9dd44ca49acad834cccdc3aa.r2.dev/googleads/HoodieThai5.jpg" alt="Promo Mobile" loading="lazy" />
+  </a>
+
+  <!-- Konten lengkap untuk desktop -->
+  <div class="desktop-content">
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/03/55/23/03552386312097aa0ae8e08cea02f1a5.jpg" alt="Hoodie Thailand" />
+      <div class="title">Hoodie Thailand - Keren</div>
+      <div class="price">Rp 188.888,00</div>
+      <div class="stock">Stock Tersedia</div>
+
+      <div class="quantity">
+        <button onclick="changeQty(-1)">-</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="changeQty(1)">+</button>
+      </div>
+
+      <a href="https://shopee.co.id/OFFLINE-APPAREL-Hoodie-Oversize-Imprisoned-i.79305108.20596329174?sp_atk=40366b23-90de-476f-95ea-9bc99c65a964&xptdk=40366b23-90de-476f-95ea-9bc99c65a964" class="btn-order" target="_blank">Pesan Sekarang</a>
+
+      <div class="desc">
+       Promo Hoodie Thailand Keren Masa kini dengan kualitas tinggi dan Harga terjangkau. Dapatkan Discount 88 % !!
+      </div>
+    </div>
+
+    <footer>
+      Beralih dalam <span class="countdown">1</span> detik...
+    </footer>
+  </div>
+
+  <script>
+    const qtyInput = document.getElementById('qty');
+    const waLink = document.getElementById('wa-link');
+    const nomorWa = '6287870807859'; // Ganti dengan nomor WhatsApp kamu
+
+    function updateWaLink() {
+      const qty = qtyInput.value;
+      const message = `Halo! Saya ingin pesan Hoodie Thailand - 3D sebanyak ${qty} pcs.`;
+      const url = `https://wa.me/${nomorWa}?text=${encodeURIComponent(message)}`;
+      waLink.href = url;
+    }
+
+    function changeQty(val) {
+      let current = parseInt(qtyInput.value);
+      if (current + val >= 1) {
+        qtyInput.value = current + val;
+        updateWaLink();
+      }
+    }
+
+    updateWaLink();
+  </script>
+
+</body>
+</html>
