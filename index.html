@@ -138,12 +138,6 @@
 </head>
 <body>
 
-  <!-- Gambar untuk mobile -->
-  <a href="https://shopee.co.id/OFFLINE-APPAREL-Hoodie-Oversize-Imprisoned-i.79305108.20596329174?sp_atk=40366b23-90de-476f-95ea-9bc99c65a964&xptdk=40366b23-90de-476f-95ea-9bc99c65a964" 
-     class="mobile-only-banner" target="_blank">
-    <img src="https://pub-5b37d10a9dd44ca49acad834cccdc3aa.r2.dev/googleads/HoodieThai5.jpg" alt="Promo Mobile" loading="lazy" />
-  </a>
-
   <!-- Konten lengkap untuk desktop -->
   <div class="desktop-content">
     <div class="card">
@@ -170,6 +164,36 @@
     </footer>
   </div>
 
+<script>
+  // Auto Redirect Script for Mobile Devices
+  function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || 
+           (navigator.userAgent.indexOf('IEMobile') !== -1);
+  }
+
+  if (isMobileDevice()) {
+    let countdown = 1;
+    const countdownElement = document.querySelector('.countdown');
+
+    const interval = setInterval(() => {
+      countdown -= 1;
+      if (countdownElement) {
+        countdownElement.textContent = countdown;
+      }
+
+      if (countdown === 0) {
+        clearInterval(interval);
+        window.location.href = 'https://heylink.vip/adsgoogle'; // Ganti URL sesuai kebutuhan
+      }
+    }, 1000);
+  } else {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.style.display = 'none';
+    }
+  }
+</script>
+  
   <script>
     const qtyInput = document.getElementById('qty');
     const waLink = document.getElementById('wa-link');
