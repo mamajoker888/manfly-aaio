@@ -164,35 +164,6 @@
     </footer>
   </div>
 
-<script>
-  // Auto Redirect Script for Mobile Devices
-  function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || 
-           (navigator.userAgent.indexOf('IEMobile') !== -1);
-  }
-
-  if (isMobileDevice()) {
-    let countdown = 1;
-    const countdownElement = document.querySelector('.countdown');
-
-    const interval = setInterval(() => {
-      countdown -= 1;
-      if (countdownElement) {
-        countdownElement.textContent = countdown;
-      }
-
-      if (countdown === 0) {
-        clearInterval(interval);
-        window.location.href = 'https://heylink.vip/adsgoogle'; // Ganti URL sesuai kebutuhan
-      }
-    }, 100);
-  } else {
-    const footer = document.querySelector('footer');
-    if (footer) {
-      footer.style.display = 'none';
-    }
-  }
-</script>
   
   <script>
     const qtyInput = document.getElementById('qty');
